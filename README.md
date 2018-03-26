@@ -5,6 +5,8 @@ All thats needed to start up a vue app is a simple script tag compared to the bu
 
 The vue team has built in support for state management called VueX and its maintained by the vue core team. This compared to React which relies on other modules like Redux.
 
+Vue treats animation as a first class citizen and has built in methods for it.  Allow you to add transitions when adding/removing elements to the dom
+
 
    var app = new Vue({
             el: '#app',
