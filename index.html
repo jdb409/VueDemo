@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link href='styles.css' rel='stylesheet' />
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+
+
+    <div id="app-2">
+        <p v-bind:title="message">
+            Hover your mouse over me for a few seconds to see my dynamically bound title!
+        </p>
+    </div>
+
+    <!-- example conditional -->
+    <div id="app-3">
+        <span v-if="seen">Now you see me</span>
+        <button v-on:click="seen = !seen">Click</button>
+    </div>
+
+    <!-- example loop -->
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+
+    <!-- method usage -->
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <!-- input -->
+    <div id="app-6">
+        <p>{{ message }}</p>
+        <input v-model="message">
+        <button v-on:click='handleClick'>Click me</button>
+        <p>{{output}}</p>
+    </div>
+
+    <div id="app-7">
+        <ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id" />
+        </ol>
+        <ol>
+            <todo-item v-for="item in otherList" v-bind:todo="item" v-bind:key="item.id" />
+        </ol>
+    </div>
+
+    <!-- example transitions -->
+    <div id="app-8">
+        <button v-on:click="show = !show">
+            Toggle
+        </button>
+        <transition name="fade">
+            <p v-if="show">Animation when element leaves or enters the dom</p>
+        </transition>
+    </div>
+    <script src='index.js'></script>
+</body>
+
+</html>
